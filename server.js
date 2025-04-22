@@ -19,7 +19,7 @@ app.use(logRequest); // use the middleware function for all routes
 
 
 app.use(passport.initialize());
-const localAuthMiddleware = passport.authenticate('local', { session: false }); // use local strategy for authentication
+//const localAuthMiddleware = passport.authenticate('local', { session: false }); // use local strategy for authentication
 app.get('/', function(req, res) {
   res.send('Welcome to my host... How can I help you?')
 })
@@ -34,7 +34,7 @@ const menuRoutes = require('./routes/menuRoutes'); // import the menu routes
 // use the router files
 
 
-app.use('/person', localAuthMiddleware, personRoutes); // use the person routes
+app.use('/person', personRoutes); // use the person routes
 app.use('/menu', menuRoutes); // use the menu routes
 
 
